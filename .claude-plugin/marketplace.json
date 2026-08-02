@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "varo",
+  "description": "Ship static sites and keep them honest: the repo and production drift apart quietly, and only production is what people load.",
+  "owner": {
+    "name": "Eugenio Nerelli",
+    "url": "https://github.com/eugenionerelli"
+  },
+  "plugins": [
+    {
+      "name": "varo",
+      "description": "Ship a static site and keep it honest. A skill that knows the hosts and the traps, an auditor agent that reports only what the live site confirmed, and a SessionStart hook that says where the site deploys and what is committed but not published.",
+      "category": "deployment",
+      "source": "./"
+    }
+  ]
+}

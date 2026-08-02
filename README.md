@@ -54,12 +54,25 @@ learn to skip.
 ## Installing
 
 ```bash
-git clone https://github.com/eugenionerelli/varo.git ~/.claude/plugins/varo
+claude plugin marketplace add eugenionerelli/varo
+claude plugin install varo@varo
 ```
 
-Then add it in Claude Code with `/plugin`, or point at the folder directly.
-There is nothing to build and no dependency beyond Python 3 and git, both of
-which are already on the machine if you are deploying websites from it.
+Or clone it and load it for one session, which is the quickest way to see
+whether you want it:
+
+```bash
+git clone https://github.com/eugenionerelli/varo.git
+claude --plugin-dir ./varo
+```
+
+Nothing to build, and no dependency past Python 3 and git, both already on any
+machine that deploys websites.
+
+It costs about 264 tokens in every session, which is the skill and the agent
+announcing that they exist. The hook runs in the harness and adds nothing to
+the model's context at all. Numbers from `claude plugin details varo`, not
+estimated by hand.
 
 ## Using it
 
@@ -112,7 +125,7 @@ asks for.
 python3 tools/prova.py
 ```
 
-Twenty-six of them, a few seconds, run against throwaway repositories built on
+Twenty-nine of them, a few seconds, run against throwaway repositories built on
 the spot. They cover the plugin manifest, the hook's behaviour on a site, on a
 folder that is not a site, outside git, and on a path that does not exist, and
 they run the prose through `tools/stylecheck.py`, which enforces the writing

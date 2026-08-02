@@ -97,6 +97,17 @@ def main() -> int:
         except json.JSONDecodeError as e:
             prova("hooks.json è json valido", False, str(e))
 
+    mercato = RADICE / ".claude-plugin" / "marketplace.json"
+    prova("marketplace.json esiste", mercato.exists())
+    if mercato.exists():
+        try:
+            m = json.loads(mercato.read_text(encoding="utf-8"))
+            prova("marketplace.json è json valido", True)
+            nomi = [p.get("name") for p in m.get("plugins", [])]
+            prova("il marketplace elenca varo", "varo" in nomi, str(nomi))
+        except json.JSONDecodeError as e:
+            prova("marketplace.json è json valido", False, str(e))
+
     prova("la skill c'è", (RADICE / "skills" / "varo" / "SKILL.md").exists())
     prova("l'agente c'è", (RADICE / "agents" / "site-auditor.md").exists())
 
