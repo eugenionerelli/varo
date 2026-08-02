@@ -4,7 +4,7 @@
   "description": "Ship static sites and keep them honest: the repo and production drift apart quietly, and only production is what people load.",
   "owner": {
     "name": "Eugenio Nerelli",
-    "url": "https://github.com/eugenionerelli"
+    "url": "https://github.com/nerln"
   },
   "plugins": [
     {

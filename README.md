@@ -54,7 +54,7 @@ learn to skip.
 ## Installing
 
 ```bash
-claude plugin marketplace add eugenionerelli/varo
+claude plugin marketplace add nerln/varo
 claude plugin install varo@varo
 ```
 
@@ -62,7 +62,7 @@ Or clone it and load it for one session, which is the quickest way to see
 whether you want it:
 
 ```bash
-git clone https://github.com/eugenionerelli/varo.git
+git clone https://github.com/nerln/varo.git
 claude --plugin-dir ./varo
 ```
 

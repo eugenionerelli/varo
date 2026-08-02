@@ -4,9 +4,9 @@
   "description": "Ship a static site and keep it honest. A skill that knows the hosts and the traps, an auditor agent that reports only what the live site confirmed, and a SessionStart hook that says where the site deploys and what is committed but not published. Built around one idea: the repo and production drift apart quietly, and only production is what people load.",
   "author": {
     "name": "Eugenio Nerelli",
-    "url": "https://github.com/eugenionerelli"
+    "url": "https://github.com/nerln"
   },
-  "homepage": "https://github.com/eugenionerelli/varo",
+  "homepage": "https://github.com/nerln/varo",
   "license": "GPL-3.0",
   "keywords": [
     "static-site",
