@@ -1,0 +1,16 @@
+{
+  "description": "On SessionStart, if the folder holds a static site, hand the session what it needs to stop guessing: the host it deploys to, the public address, commits that never reached the remote, uncommitted files. Local reads only, no network, so it costs milliseconds and stays quiet in every session that is about something else.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/stato.py\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
