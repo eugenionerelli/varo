@@ -78,20 +78,13 @@ estimated by hand.
 
 Open Claude Code in a folder holding a site. The hook speaks first:
 
-```
-## Static site in this folder (acme-brochure)
-
-- Host: Cloudflare / Netlify / Vercel
-- Config for more than one host in the same repo: wrangler.toml,
-  netlify.toml, vercel.json. Only the host you actually deploy to reads
-  its own file. Redirects and security headers written in the others do
-  nothing.
-- On branch `qa/pass-two`, 4 commit(s) ahead of `main`. The site deploys
-  from `main`, so none of that work is live.
-```
+![The SessionStart hook reporting two problems before anybody has typed a word](docs/img/hook.png)
 
 Two findings before anybody has typed a word, of the kind that stay true for
 weeks because nothing inside the editor ever shows them.
+
+(That picture is made from invented data by `docs/img/hook.html`, so it can be
+regenerated and it carries nobody's real site.)
 
 From there:
 

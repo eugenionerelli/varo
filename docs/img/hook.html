@@ -1,0 +1,48 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+  :root { --bg:#12131a; --panel:#171923; --txt:#d7dae3; --dim:#8b90a3;
+          --warn:#ffb454; --ok:#7bd88f; --accent:#7aa2f7; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); font-family:"SF Mono",Menlo,monospace;
+         display:flex; align-items:center; justify-content:center; padding:44px; }
+  .wrap { width:940px; }
+  .cap { color:var(--dim); font-size:15px; margin:0 0 14px 4px;
+         font-family:-apple-system,system-ui,sans-serif; }
+  .cap b { color:var(--txt); font-weight:600; }
+  .win { background:var(--panel); border-radius:12px; overflow:hidden;
+         box-shadow:0 24px 60px rgba(0,0,0,.55); border:1px solid #252838; }
+  .bar { display:flex; align-items:center; gap:8px; padding:12px 16px;
+         background:#1d2030; border-bottom:1px solid #252838; }
+  .dot { width:11px; height:11px; border-radius:50%; }
+  .bar span { margin-left:10px; color:var(--dim); font-size:12.5px; }
+  pre { margin:0; padding:22px 24px 26px; color:var(--txt);
+        font-size:14.5px; line-height:1.75; white-space:pre-wrap; }
+  .h { color:var(--accent); font-weight:600; }
+  .w { color:var(--warn); }
+  .d { color:var(--dim); }
+</style>
+<div class="wrap">
+  <p class="cap">You open Claude Code in a website folder. <b>Before you type anything:</b></p>
+  <div class="win">
+    <div class="bar">
+      <div class="dot" style="background:#ff5f57"></div>
+      <div class="dot" style="background:#febc2e"></div>
+      <div class="dot" style="background:#28c840"></div>
+      <span>claude — acme-brochure</span>
+    </div>
+<pre><span class="h">## Static site in this folder (acme-brochure)</span>
+
+- Host: Cloudflare / Netlify / Vercel
+- <span class="w">Config for more than one host in the same repo: wrangler.toml,
+  netlify.toml, vercel.json.</span> Only the host you actually deploy to
+  reads its own file. Redirects and security headers written in the
+  others do nothing.
+- <span class="w">On branch `qa/pass-two`, 4 commit(s) ahead of `main`.</span> The site
+  deploys from `main`, so none of that work is live.
+
+<span class="d">Read locally, without touching the network. To find out what the live
+site actually does, run the `varo` skill: the repo and production drift
+apart quietly, and only one of them is what people see.</span></pre>
+  </div>
+</div>
