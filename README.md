@@ -103,6 +103,23 @@ looked correct, which is why a finding counts here when the live site answered,
 and counts for nothing when it came from reading code and reasoning about what
 the code probably does.
 
+## Does the auditor actually find anything
+
+It was pointed at a live site on its first run. It fetched every file the site
+serves and diffed it against the working tree, filled the form in a headless
+browser and caught the address before anything was sent, checked that address
+for a mail server, and loaded the site at phone width.
+
+It reported no drift between repo and production, which was the truth, and then
+found something nobody had thought to look for: a folder was reachable on the
+live site, returning 200, and permanently broken there. Its dependencies are in
+`.gitignore`, so they never reach the host, while the page that needs them
+ships every time. Locally it works. On the deployed site it can never work.
+
+It also listed what it could not close, including that it never sent a real
+message to anybody, so the mail finding stops at the address and does not claim
+delivery. A gap somebody names is worth more than a report that reads clean.
+
 ## What it does not do
 
 No servers, no databases, no build system of its own. It works on files a host
